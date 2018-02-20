@@ -1,0 +1,119 @@
+.home {
+  
+  &-intro {
+    background-color: $regent-grey;
+    height: 100vh;
+    width: 100%;
+    min-height: 520px;
+    max-height: 640px;
+    
+    @include sm {
+      min-height: 600px;
+      max-height: 800px;
+    }
+    
+    @include md-lg {
+      min-height: 800px;
+      max-height: 1024px;
+    }
+    
+    &-content {
+      
+      .logo {
+        width: 348px;
+        height: 95px;
+        
+        @include sm {
+          width: 464px;
+          height: 126px;
+        }
+        
+        @include md-lg {
+          width: 580px;
+          height: 158px;
+        }
+      }
+      
+      .booking-links {
+        position: relative;
+        width: 336px;
+        margin: 0 auto;
+        
+        @include xs {
+          display: none;
+        }
+        
+        @include md-lg {
+          width: 420px;
+        }
+        
+        .booking-link {
+          color: $white;
+        }
+        
+        .booking-link:nth-of-type(1),
+        .booking-link:nth-of-type(3){
+          position: absolute;
+        }
+        
+        .booking-link:nth-of-type(2) {
+          margin: 0 auto;
+        }
+        
+        .booking-link:nth-of-type(1) {
+          left: 0;
+        }
+        
+        .booking-link:nth-of-type(3) {
+          right: 0;
+        }
+      }
+      
+      .social-icon {
+        position: absolute;
+        transition: right 1s;
+        right: -40px;
+        width: 40px;
+        height: 40px;
+        
+        @include md-lg {
+          right: -50px;
+          width: 50px;
+          height: 50px;
+        }
+        
+        &.twitter {
+          top: 38px;
+          
+          @include md-lg {
+            top: 48px;
+          }
+        }
+        
+        &.facebook {
+          top: 90px; 
+          
+          @include md-lg {
+            top: 110px;
+          }
+        }
+        
+        &.instagram {
+          top: 142px;
+          
+          @include md-lg {
+            top: 172px;
+          }
+        }
+      }
+    }
+  }
+  
+  &-menu {
+    background-color: $white;
+    
+    &-content {
+      
+    }
+  }
+}
