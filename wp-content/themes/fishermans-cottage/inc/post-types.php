@@ -10,39 +10,39 @@
  * Register custom post types
  */
 function fc_init_post_types() {
-  $product_labels = array(
-    'name'               => 'Products',
-    'singular_name'      => 'Product',
+  $event_labels = array(
+    'name'               => 'Events',
+    'singular_name'      => 'Event',
     'add_new'            => 'Add New',
-    'add_new_item'       => 'Add New Product',
-    'edit_item'          => 'Edit Product',
-    'new_item'           => 'New Product',
-    'all_items'          => 'All Products',
-    'view_item'          => 'View Product',
-    'search_items'       => 'Search Products',
-    'not_found'          => 'No Products found',
-    'not_found_in_trash' => 'No Products found in Trash',
+    'add_new_item'       => 'Add New Event',
+    'edit_item'          => 'Edit Event',
+    'new_item'           => 'New Event',
+    'all_items'          => 'All Events',
+    'view_item'          => 'View Event',
+    'search_items'       => 'Search Events',
+    'not_found'          => 'No Events found',
+    'not_found_in_trash' => 'No Events found in Trash',
     'parent_item_colon'  => '',
-    'menu_name'          => 'Products'
+    'menu_name'          => 'Events'
   );
 
-  $product_args = array(
-    'labels'             => $product_labels,
+  $event_args = array(
+    'labels'             => $event_labels,
     'public'             => true,
     'publicly_queryable' => true,
     'show_ui'            => true,
     'show_in_menu'       => true,
     'query_var'          => true,
-    'rewrite'            => array( 'with_front' => false, 'slug' => 'products' ),
+    'rewrite'            => array( 'with_front' => false, 'slug' => 'events' ),
     'capability_type'    => 'post',
-    'has_archive'        => true,
+    'has_archive'        => false,
     'hierarchical'       => true,
     'taxonomies'         => array(),
     'menu_position'      => 4,
-    'menu_icon'          => 'dashicons-cart',
+    'menu_icon'          => 'dashicons-calendar-alt',
     'supports'           => array( 'editor', 'title', 'thumbnail', 'page-attributes' )
   );
 
-  // register_post_type( 'product', $product_args );
+   register_post_type( 'event', $event_args );
 }
 add_action( 'init', 'fc_init_post_types' );

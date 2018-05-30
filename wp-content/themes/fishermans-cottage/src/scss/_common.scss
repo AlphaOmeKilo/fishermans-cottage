@@ -7,3 +7,19 @@
   justify-content: center;
   align-items: center;
 }
+
+.white {
+  color: $white;
+}
+
+.clearfix::after {
+  display: block;
+  clear: both;
+  width: 0;
+  height: 0;
+  content: " ";
+}
+
+.text-center {
+  text-align: center;
+}

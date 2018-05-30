@@ -52,6 +52,8 @@ var fc = fc || {};
   fc.init = function() {
     fc.header.init();
     fc.home.init();
+    fc.event.init();
+    fc.filter.init();
   }
 
   jQuery(function($) {

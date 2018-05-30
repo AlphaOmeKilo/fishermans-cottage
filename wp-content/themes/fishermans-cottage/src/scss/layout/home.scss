@@ -1,4 +1,135 @@
 .home {
+  background-color: $regent-grey;
+  
+  &-contact {
+    background-color: $white;
+    padding-top: 120px;
+    padding-bottom: 120px;
+    
+    .section-header {
+      margin-bottom: 60px;
+    }
+    
+    &-content {
+      display: flex;
+      
+      .google-map-container {
+        width: 50%;
+        height: 50vw;
+        
+        
+        .google-map {
+//          height: 500px;
+//          width: 500px;
+        }
+      }
+      
+      .enquiry-form {
+        padding: 0 24px 0 48px;
+        width: 50%;
+        
+        .title {
+          margin-bottom: 24px;
+        }
+        
+        label {
+          padding: 0;
+          margin-bottom: 12px;
+        }
+        
+        input,
+        textarea {
+          margin-bottom: 24px;
+        }
+        
+        textarea {
+          height: 200px;
+        }
+      }
+    }
+  }
+  
+  &-bookings {
+    background-color: $regent-grey;
+    padding-top: 120px;
+    padding-bottom: 120px;
+    
+    .section-header {
+      margin-bottom: 60px;
+    }
+    
+    .booking-form-container {
+      
+      fieldset {
+        border: none;
+        width: fit-content;
+        margin: 0 auto;
+        
+        .rtb-text {
+          width: 400px;
+        }
+        
+        select {
+          width: 100%;
+        }
+        
+        input {
+          max-width: none;
+        }
+      }
+      
+      button {
+        margin-left: 50%;
+        transform: translateX(-50%);
+        margin-top: 24px;
+      }
+      
+      legend {
+        display: none;
+      }
+    }
+  }
+  
+  &-reviews {
+    background-color: $white;
+    padding-top: 120px;
+    padding-bottom: 60px;
+    
+    .reviews {
+      background-color: $white;
+      
+      .review {
+        height: 200px;
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        
+        &-content {
+          max-width: 800px;
+          
+          .comment,
+          .author {
+            text-align: center;
+          }
+          
+          .comment {
+            margin-bottom: 24px;
+          }
+        }
+      }
+    }
+  }
+  
+  &-image-slider {
+    background-color: $white;
+    height: 400px;
+    width: 100%;
+    
+    img {
+      height: 100%;
+    }
+  }
   
   &-intro {
     background-color: $regent-grey;
@@ -34,7 +165,7 @@
         }
       }
       
-      .booking-links {
+      .menu-links {
         position: relative;
         width: 336px;
         margin: 0 auto;
@@ -47,26 +178,40 @@
           width: 420px;
         }
         
-        .booking-link {
-          color: $white;
+        .menu-link {
+          
+          a {
+            color: $white;
+            transition: color 0.25s;
+          }
+          
+          a:hover {
+            color: $moon-mist;
+          }
+          
         }
         
-        .booking-link:nth-of-type(1),
-        .booking-link:nth-of-type(3){
+        .menu-link:nth-of-type(1),
+        .menu-link:nth-of-type(3){
           position: absolute;
         }
         
-        .booking-link:nth-of-type(2) {
+        .menu-link:nth-of-type(2) {
           margin: 0 auto;
         }
         
-        .booking-link:nth-of-type(1) {
+        .menu-link:nth-of-type(1) {
           left: 0;
         }
         
-        .booking-link:nth-of-type(3) {
+        .menu-link:nth-of-type(3) {
           right: 0;
         }
+      }
+      
+      .pub-info {
+        text-align: center;
+        margin-top: 48px;
       }
       
       .social-icon {
@@ -110,10 +255,146 @@
   }
   
   &-menu {
-    background-color: $white;
+    background-color: $regent-grey;
+    margin-bottom: 60px;
+    padding-left: 24px;
+    padding-right: 24px;
+    
+    &-filter {
+      text-align: center;
+      margin-bottom: 64px;
+      
+      .filter-copy {
+        margin-bottom: 12px;
+      }
+      
+      .filter-options {
+        display: flex;
+        justify-content: center;
+      }
+      
+      .filter-option {
+        display: flex;
+        align-items: center;
+        margin-right: 24px;
+        cursor: pointer;
+        padding: 4px;
+        
+        img {
+          height: 25px;
+          width: 25px;
+          margin-right: 12px;
+        }
+        
+        &.active {
+          background-color: $moon-mist;
+        }
+      }
+    }
     
     &-content {
+      background-color: $white;
+      padding-bottom: 64px;
       
+      -webkit-box-shadow: 0 10px 6px -6px #777;
+       -moz-box-shadow: 0 10px 6px -6px #777;
+            box-shadow: 0 10px 6px -6px #777;
+      
+      .section-header {
+        margin-top: 60px;
+        margin-bottom: 60px;
+        
+        .food {
+          margin-right: 36px;
+          cursor: pointer;
+          color: $black;
+          transition: color 0.25s;
+          
+          &.active {
+            border-bottom: 1px solid #000;
+          }
+        }
+      
+        
+        .food:hover {
+          color: $moon-mist;
+        }
+        
+        .drink {
+          cursor: pointer;
+          transition: color 0.25s;
+          color: $black;
+          margin-left: 36px;
+          
+          &.active {
+            border-bottom: 1px solid #000;
+          }
+        }
+        
+        .drink:hover {
+          color: $moon-mist;
+        }
+      }
+      
+      #food-menu {
+        text-align: center;
+      }
+    }
+    
+    .featured {
+      
+      &-title {
+        margin-bottom: 24px;
+      }
+      
+      &-drinks {
+        display: flex;
+      }
+      
+      &-drink {
+        margin-right: 24px;
+      }
+      
+      &-image {
+        width: 300px;
+        height: 300px;
+        background-size: cover;
+        background-position: center;
+      }
+    }
+     
+    .menu-section {
+      
+      &-title {
+        margin-bottom: 24px;
+      }
+      
+      .menu-item {
+        &-line {
+          position: relative;
+          display: flex;
+        }
+        
+        &-line:last-of-type {
+          margin-bottom: 24px;
+        }
+        
+        &-name,
+        &-description {
+          margin-left: 168px;
+        }
+        
+        &-price {
+          position: absolute;
+          right: 168px;
+        }
+        
+        .allergen {
+          width: 25px;
+          height: 25px;
+          margin-bottom: 5px;
+        }
+      }
     }
   }
 }

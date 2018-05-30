@@ -1,0 +1,38 @@
+@font-face {
+  font-family: 'CaviarDreams';
+  src: url('../../fonts/caviardreams_bold.ttf') format('trueType');
+  font-style:  normal;
+}
+
+$caviar-dreams : 'CaviarDreams', sans-serif;
+
+.menu-link {
+  font-family: $caviar-dreams;
+  font-size: 18px;
+  line-height: 2.12;
+  letter-spacing: 4px;
+  text-transform: uppercase;
+}
+
+.h1 {
+  font-family: $caviar-dreams;
+  font-size: 64px;
+  line-height: 1.33;
+  letter-spacing: 4px;
+  text-transform: uppercase;
+}
+
+.h2 {
+  font-family: $caviar-dreams;
+  font-size: 18px;
+  line-height: 2.12;
+  letter-spacing: 4px;
+  text-transform: uppercase;
+}
+
+.b2 {
+  font-family: $caviar-dreams;
+  font-size: 12px;
+  line-height: 1;
+  letter-spacing: 1px;
+}

@@ -6,6 +6,7 @@
 */
 
 @import 'lib/reset';
+@import 'lib/flickity.min';
 
 @import '_variables';
 @import '_bootstrap';
@@ -16,3 +17,4 @@
 @import 'components/header';
 
 @import 'layout/home';
+@import 'layout/events';

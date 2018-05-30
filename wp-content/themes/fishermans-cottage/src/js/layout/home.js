@@ -19,5 +19,87 @@ fc.home.init = function() {
     }, 400);
   }
   
+  function initMenu() {
+    $foodMenuHeader = $('.home-menu .food');
+    $drinkMenuHeader = $('.home-menu .drink');
+    
+    $foodMenu = $('#food-menu');
+    $drinkMenu = $('#drink-menu');
+    
+    $drinkMenu.hide();
+    
+    $foodMenuHeader.on('click', function() {
+      $drinkMenuHeader.removeClass('active');
+      $foodMenuHeader.addClass('active');
+      
+      $foodMenu.show();
+      $drinkMenu.hide();
+    });
+    
+    $drinkMenuHeader.on('click', function() {
+      $drinkMenuHeader.addClass('active');
+      $foodMenuHeader.removeClass('active');
+      
+      $foodMenu.hide();
+      $drinkMenu.show();
+    });
+  }
+  
+  function setupSmoothScroll() {
+    $('a[href*="#"]')
+    .not('[href="#"]')
+    .not('[href="#0"]')
+    .click(function(event) {
+      if ( location.pathname.replace(/^\//, '') == this.pathname.replace(/^\//, '') 
+        && location.hostname == this.hostname) {
+        var target = $(this.hash);
+        target = target.length ? target : $('[name=' + this.hash.slice(1) + ']');
+        if (target.length) {
+          event.preventDefault();
+          $('html, body').animate({
+            scrollTop: target.offset().top
+          }, 1000, function() {
+            var $target = $(target);
+            $target.focus();
+            if ($target.is(":focus")) {
+              return false;
+            } else {
+              $target.attr('tabindex','-1');
+              $target.focus();
+            };
+          });
+        }
+      }
+    });
+  }
+  
+  function initContactForm() {
+    $('#contact-form').on("submit", function(e) {
+      e.preventDefault();
+      
+      console.log($(this).serialize());
+      
+      $.ajax({
+        type: 'POST',
+        dataType: 'json',
+        url: ajax_url,
+        data: $(this).serialize(),
+        success: function (results) {
+          console.log(results);
+          $(".form-container").text(results.successMessage);
+          $("#contact-form").hide();
+        },
+        error: function (error) {
+          console.log(error);
+        }
+      });
+      return false;
+    });
+  }
+  
+  
+  initContactForm();
   showSocial();
+  initMenu();
+  setupSmoothScroll();
 }
