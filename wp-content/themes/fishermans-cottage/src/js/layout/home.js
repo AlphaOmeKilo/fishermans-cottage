@@ -82,7 +82,7 @@ fc.home.init = function() {
       $.ajax({
         type: 'POST',
         dataType: 'json',
-        url: ajax_url,
+        url: post_url,
         data: $(this).serialize(),
         success: function (results) {
           console.log(results);
@@ -97,6 +97,20 @@ fc.home.init = function() {
     });
   }
   
+  if($('.rtb-message').length > 0) {
+    $('.booking-info').hide();
+    $('html, body').animate({
+      scrollTop: 0
+    }, 50);
+    setTimeout(function() {
+      $('html, body').animate({
+        scrollTop: $("#booking").offset().top
+      }, 1000);
+    }, 50);
+    
+  } else {
+    console.log($('.rtb-message'));
+  }
   
   initContactForm();
   showSocial();

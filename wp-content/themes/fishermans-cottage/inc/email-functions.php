@@ -19,7 +19,7 @@ function send_email() {
   $email = $_POST["email"];
   $message = $_POST["message"];
   
-  $email_to = "alexwokeeffe@gmail.com";
+  $email_to = "pol@assets.ltd.uk";
   $email_subject = "General Enquiry";
   
   $email_message = "";

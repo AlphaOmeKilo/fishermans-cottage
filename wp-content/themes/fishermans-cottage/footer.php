@@ -1,5 +1,8 @@
 
       <footer class="site-footer">
+        
+        <a class="logo-link" href="<?php fc_url(); ?>"><img src="<?php fc_include('img/logo.svg'); ?>" class="logo"></a>
+        
       </footer>
     </div><!-- .wrap -->
 
@@ -12,7 +15,8 @@
     <?php endif ?>
 
   <script type="text/javascript">
-    var ajax_url = '<?php echo admin_url( 'admin-post.php' ) ?>';
+    var ajax_url = '<?php echo admin_url( 'admin-ajax.php' ) ?>';
+    var post_url = '<?php echo admin_url( 'admin-post.php' ) ?>';
   </script>
   </body>
 </html>

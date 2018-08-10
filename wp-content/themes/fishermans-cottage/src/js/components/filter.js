@@ -20,6 +20,8 @@ fc.filter.init = function() {
       $filters.push($(this).data('filter'))
     });
      
+     console.log('filter');
+     
     $.ajax({
         url  : ajax_url,
         type : "POST",

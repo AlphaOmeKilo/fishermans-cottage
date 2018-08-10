@@ -23,3 +23,23 @@
 .text-center {
   text-align: center;
 }
+
+.hov-black:after {
+  border-bottom: solid 3px $black; 
+}
+
+.hov-white:after {
+  border-bottom: solid 3px $white; 
+}
+
+.hov:after {
+  display:block;
+  content: '';
+  transform: scaleX(0);  
+  transition: transform 250ms ease-in-out;
+}
+
+
+.hov:hover:after {
+  transform: scaleX(1);
+}

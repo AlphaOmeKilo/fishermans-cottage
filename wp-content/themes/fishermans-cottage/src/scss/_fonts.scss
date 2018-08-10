@@ -8,10 +8,14 @@ $caviar-dreams : 'CaviarDreams', sans-serif;
 
 .menu-link {
   font-family: $caviar-dreams;
-  font-size: 18px;
-  line-height: 2.12;
+  font-size: 24px;
+  line-height: 1;
   letter-spacing: 4px;
   text-transform: uppercase;
+  
+  @include tablet {
+    font-size: 18px;
+  }
 }
 
 .h1 {
@@ -28,6 +32,17 @@ $caviar-dreams : 'CaviarDreams', sans-serif;
   line-height: 2.12;
   letter-spacing: 4px;
   text-transform: uppercase;
+  
+  @include mobile {
+    font-size: 14px;
+  }
+}
+
+.b1 {
+  font-family: $caviar-dreams;
+  font-size: 16px;
+  line-height: 1;
+  letter-spacing: 1px;
 }
 
 .b2 {
@@ -35,4 +50,15 @@ $caviar-dreams : 'CaviarDreams', sans-serif;
   font-size: 12px;
   line-height: 1;
   letter-spacing: 1px;
+}
+
+.b3 {
+  font-family: $caviar-dreams;
+  font-size: 20px;
+  line-height: 1;
+  letter-spacing: 1px;
+  
+  @include mobile {
+    font-size: 14px;
+  }
 }

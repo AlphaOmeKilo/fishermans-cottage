@@ -3,43 +3,139 @@
   
   &-contact {
     background-color: $white;
-    padding-top: 120px;
-    padding-bottom: 120px;
+    padding-top: 60px;
+    padding-bottom: 60px;
     
     .section-header {
-      margin-bottom: 60px;
+      margin-bottom: 24px;
+      
+      @include desktop {
+        margin-bottom: 80px;
+      }
+    }
+    
+    &-social-links {
+      display: flex;
+      justify-content: center;
+      width: 25%;
+      margin: 60px auto 0;
+      
+      @include mobile {
+        width: 75%;
+      }
+      
+      a {
+        margin: 0 auto;
+      }
+      
+      .social-icon {
+        width: 40px;
+        height: 40px;
+        
+        @include md-lg {
+          width: 50px;
+          height: 50px;
+        }
+        
+        &:hover {
+          transform: scale(1.1);
+        }
+      }
+      
     }
     
     &-content {
-      display: flex;
+      position: relative;
+      
+      @include desktop {
+        display: flex;
+      }
       
       .google-map-container {
-        width: 50%;
-        height: 50vw;
+        width: 100%;
+        height: 100vw;
         
+        @include desktop {
+          width: 50%;
+          height: 500px;
+          display: flex;
+          justify-content: flex-end;
+          padding-right: 48px;
+        }
         
         .google-map {
-//          height: 500px;
-//          width: 500px;
+          border: 5px solid $regent-grey;
+          height: 100%;
+          width: 100%;
+          
+          @include desktop {
+            width: 500px;
+            height: 500px;
+          }
+
         }
       }
       
       .enquiry-form {
-        padding: 0 24px 0 48px;
-        width: 50%;
+        width: 100%;
+        
+        @include desktop {
+          position: absolute;
+          right: 0;
+          width: 50%;
+          padding: 0 24px 0 48px;
+        }
         
         .title {
           margin-bottom: 24px;
+          
+          @include mobile {
+            text-align: center;
+            margin-top: 24px;
+          }
+          
+          @include tablet {
+            text-align: center;
+            margin-top: 24px;
+          }
         }
         
         label {
           padding: 0;
           margin-bottom: 12px;
+          
         }
         
         input,
         textarea {
           margin-bottom: 24px;
+          border: 1px solid $regent-grey;
+          border-radius: 5px;
+        }
+        
+        input[type="submit"] {
+          background-color: transparent;
+          transition: background-color .25s;
+          font-family: $caviar-dreams;
+          border: 1px solid $regent-grey;
+          padding: 10px 32px;
+          border-radius: 5px;
+          
+          @include mobile {
+            margin-left: 50%;
+            transform: translateX(-50%);
+            padding: 10px 24px;
+          }
+          
+          @include tablet {
+            margin-left: 50%;
+            transform: translateX(-50%);
+          }
+          
+          &:hover {
+            background-color: $regent-grey;
+            color: $white;
+          }
         }
         
         textarea {
@@ -51,22 +147,64 @@
   
   &-bookings {
     background-color: $regent-grey;
-    padding-top: 120px;
+    padding-top: 60px;
     padding-bottom: 120px;
     
     .section-header {
       margin-bottom: 60px;
     }
     
+    .lifebuoy {
+      filter: invert(100%);
+    }
+    
     .booking-form-container {
+      
+      .rtb-message {
+        color: $white;
+        text-align: center;
+        max-width: 400px;
+        margin: 0 auto;
+        font-family: $caviar-dreams;
+      }
+      
+      .booking-info {
+        width: 480px;
+        margin: 0 auto 24px;
+        text-align: center;
+        
+        @include mobile {
+          width: 100%;
+          padding-left: 16px;
+          padding-right: 16px;
+        }
+      }
       
       fieldset {
         border: none;
         width: fit-content;
         margin: 0 auto;
         
+        @include mobile {
+          width: 100%;
+          padding: 0 10%;
+        }
+        
         .rtb-text {
           width: 400px;
+          font-family: $caviar-dreams;
+          color: $regent-grey;
+          
+          @include mobile {
+            width: 100%;
+          }
+        }
+        
+        .rtb-select,
+        .add-message,
+        .rtb-textarea {
+          font-family: $caviar-dreams;
+          color: $regent-grey;
         }
         
         select {
@@ -76,12 +214,44 @@
         input {
           max-width: none;
         }
+        
+        input,
+        textarea,
+        #rtb-party {
+          background-color: $white;
+          border: none;
+          border-radius: 5px;
+        }
+        
+        a, 
+        label {
+          color: $white;
+        }
       }
       
       button {
         margin-left: 50%;
         transform: translateX(-50%);
         margin-top: 24px;
+        padding: 10px 32px;
+        font-family: $caviar-dreams;
+        background-color: transparent;
+        border: 1px solid $white;
+        color: $white;
+        transition: background-color .25s;
+        border-radius: 5px;
+        
+        @include mobile {
+          margin-top: 36px;
+          padding: 10px 24px;
+        }
+        
+        &:hover {
+          color: $regent-grey;
+          background-color: $white;
+        }
+        
+        
       }
       
       legend {
@@ -92,7 +262,7 @@
   
   &-reviews {
     background-color: $white;
-    padding-top: 120px;
+    padding-top: 60px;
     padding-bottom: 60px;
     
     .reviews {
@@ -115,6 +285,16 @@
           
           .comment {
             margin-bottom: 24px;
+            
+            @include mobile {
+              width: 70%;
+              margin: 0 auto 24px;
+            }
+            
+            @include tablet {
+              width: 70%;
+              margin: 0 auto 24px;
+            }
           }
         }
       }
@@ -150,6 +330,10 @@
     
     &-content {
       
+      @include mobile {
+        position: relative;
+      }
+      
       .logo {
         width: 348px;
         height: 95px;
@@ -160,8 +344,8 @@
         }
         
         @include md-lg {
-          width: 580px;
-          height: 158px;
+          width: 846px;
+          height: 240px;
         }
       }
       
@@ -170,48 +354,46 @@
         width: 336px;
         margin: 0 auto;
         
-        @include xs {
+        @include mobile {
+          display: none;
+        }
+        
+        @include tablet {
           display: none;
         }
         
         @include md-lg {
-          width: 420px;
+          width: 610px;
+          padding-left: 28px;
         }
         
         .menu-link {
+          margin: 0 auto;
           
           a {
             color: $white;
             transition: color 0.25s;
           }
           
-          a:hover {
-            color: $moon-mist;
-          }
-          
         }
         
-        .menu-link:nth-of-type(1),
-        .menu-link:nth-of-type(3){
-          position: absolute;
-        }
-        
-        .menu-link:nth-of-type(2) {
-          margin: 0 auto;
-        }
-        
-        .menu-link:nth-of-type(1) {
-          left: 0;
-        }
-        
-        .menu-link:nth-of-type(3) {
-          right: 0;
-        }
       }
       
       .pub-info {
         text-align: center;
-        margin-top: 48px;
+        margin-top: 60px;
+        
+        @include tablet {
+          margin-top: 24px;
+        }
+        
+        @include desktop {
+          margin-top: 48px;
+        }
+        
+        .info-point {
+          margin-bottom: 4px;
+        }
       }
       
       .social-icon {
@@ -221,32 +403,69 @@
         width: 40px;
         height: 40px;
         
-        @include md-lg {
+        @include tablet {
           right: -50px;
           width: 50px;
           height: 50px;
         }
         
+        @include desktop {
+          right: -50px;
+          width: 50px;
+          height: 50px;
+        }
+        
+        &:hover {
+          transform: scale(1.1);
+        }
+        
         &.twitter {
-          top: 38px;
+          bottom: 32%;
           
-          @include md-lg {
+          @include mobile {
+            left: 25%;
+            transform: translateX(-20px);
+          }
+          
+          @include tablet {
+            top: 48px;
+          }
+          
+          @include desktop {
             top: 48px;
           }
         }
         
         &.facebook {
-          top: 90px; 
+          bottom: 32%;
           
-          @include md-lg {
+          @include mobile {
+            left: 50%;
+            transform: translateX(-20px);
+          }
+          
+          @include tablet {
+            top: 110px;
+          }
+          
+          @include desktop {
             top: 110px;
           }
         }
         
         &.instagram {
-          top: 142px;
+          bottom: 32%;
           
-          @include md-lg {
+          @include mobile {
+            left: 75%;
+            transform: translateX(-20px);
+          }
+          
+          @include tablet {
+            top: 172px;
+          }
+          
+          @include desktop {
             top: 172px;
           }
         }
@@ -256,9 +475,12 @@
   
   &-menu {
     background-color: $regent-grey;
-    margin-bottom: 60px;
-    padding-left: 24px;
-    padding-right: 24px;
+    
+    @include desktop {
+      padding-left: 24px;
+      padding-right: 24px;
+      margin-bottom: 120px;
+    }
     
     &-filter {
       text-align: center;
@@ -269,16 +491,37 @@
       }
       
       .filter-options {
-        display: flex;
-        justify-content: center;
+        
+        @include mobile {
+          text-align: center;
+        }
+        
+        @include desktop {
+          display: flex;
+          justify-content: center;
+        }
+        
       }
       
       .filter-option {
         display: flex;
         align-items: center;
-        margin-right: 24px;
         cursor: pointer;
         padding: 4px;
+        
+        @include mobile {
+          width: fit-content;
+          margin: 0 auto 12px;
+        }
+        
+        @include tablet {
+          width: fit-content;
+          margin: 0 auto 12px;
+        }
+        
+        @include desktop {
+          margin-right: 24px;
+        }
         
         img {
           height: 25px;
@@ -295,6 +538,7 @@
     &-content {
       background-color: $white;
       padding-bottom: 64px;
+      position: relative;
       
       -webkit-box-shadow: 0 10px 6px -6px #777;
        -moz-box-shadow: 0 10px 6px -6px #777;
@@ -306,38 +550,39 @@
         
         .food {
           margin-right: 36px;
-          cursor: pointer;
-          color: $black;
-          transition: color 0.25s;
-          
-          &.active {
-            border-bottom: 1px solid #000;
-          }
-        }
-      
-        
-        .food:hover {
-          color: $moon-mist;
         }
         
         .drink {
-          cursor: pointer;
-          transition: color 0.25s;
-          color: $black;
           margin-left: 36px;
+        }
+        
+        .food,
+        .drink {
+          cursor: pointer;
+          color: $black;
+          transition: color 0.25s;
+          line-height: 1.3;
           
-          &.active {
-            border-bottom: 1px solid #000;
+          
+          &.active:after {   
+            border-bottom: solid 3px $black; 
+            transform: scaleX(1);
           }
         }
         
-        .drink:hover {
-          color: $moon-mist;
-        }
       }
       
       #food-menu {
         text-align: center;
+      }
+      
+      #food-menu,
+      #drink-menu {
+        
+        
+        &.active {
+          
+        }
       }
     }
     
@@ -345,10 +590,16 @@
       
       &-title {
         margin-bottom: 24px;
+        text-align: center;
       }
       
       &-drinks {
         display: flex;
+        margin-bottom: 24px;
+        
+        @include mobile {
+          display: none;
+        }
       }
       
       &-drink {
@@ -367,6 +618,11 @@
       
       &-title {
         margin-bottom: 24px;
+        text-align: center;
+        
+        @include mobile {
+          margin-top: 48px;
+        }
       }
       
       .menu-item {
@@ -379,14 +635,35 @@
           margin-bottom: 24px;
         }
         
+        &-name {
+          @include mobile {
+            max-width: 300px;
+            line-height: 1.6;
+          }
+        }
+        
+        &-description {
+          
+        }
+        
         &-name,
         &-description {
-          margin-left: 168px;
+          text-align: left;
+          
+          @include desktop {
+            margin-left: 168px;
+          }
+          
         }
         
         &-price {
           position: absolute;
-          right: 168px;
+          right: 0;
+          
+          @include desktop {
+            right: 168px;
+          }
+          
         }
         
         .allergen {

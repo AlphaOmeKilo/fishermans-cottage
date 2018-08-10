@@ -1,5 +1,5 @@
 .home-events {
-  padding-top: 120px;
+  padding-top: 60px;
   background-color: $white;
 
   .section-header {
@@ -21,7 +21,7 @@
           top: 0;
           bottom: 0;
           opacity: 0.5;
-          background-color: $black;
+          background-color: $regent-grey;
           z-index: 20;
           visibility: hidden; 
           opacity: 0;
@@ -39,7 +39,7 @@
         &-foreground {
           position: fixed;
           width: 80%;
-          height: auto;
+          height: 80%;
           left: 10%;
           top: 50%;
           transform: translateY(-50%);
@@ -49,6 +49,10 @@
           opacity: 0;
           transition: opacity 1s;
           padding: 16px;
+          
+          @include mobile {
+            max-height: 90%;
+          }
           
           &.active {
             opacity: 1;
@@ -60,6 +64,11 @@
           
           &-content {
             display: flex;
+          }
+          
+          .scrollable-content {
+            overflow-y: scroll;
+            height: 100%;
           }
           
           .close-event {
@@ -100,7 +109,6 @@
                 }
               }
             }
-            
           }
           
           .event-title {
@@ -109,12 +117,20 @@
           }
           
           .event-poster {
-            width: 50%;
+            width: 100%;
             margin-bottom: 16px;
+            
+            @include desktop {
+              width: 50%;      
+            }
           }
           
           .event-details {
-            width: 50%;
+            width: 100%;
+            
+            @include desktop {
+              width: 50%;
+            }
           }
         }
       }
@@ -123,14 +139,43 @@
         width: 100%;
 
         .month-header {
-          margin-bottom: 60px;
+          margin-bottom: 24px;
           padding-left: 16px;
+        }
+        
+        .date-wedge {
+          height: 0;
+          width: 0;
+          bottom: -8px;
+          left: 12px;
+          position: absolute;
+          border-left: 40px solid $regent-grey;
+          border-bottom: 40px solid $regent-grey;
+          border-top: 40px solid transparent;
+          border-right: 40px solid transparent;
+        }
+        
+        .date-container {
+          position: absolute;
+          bottom: 6px;
+          left: 28px;
+          color: $white;
+          font-weight: bold;
         }
       }
 
       .event-poster {
         width: 100%;
         height: auto;
+        transition: 0.25s;
+        
+        -webkit-box-shadow: 0 10px 6px -6px #777;
+       -moz-box-shadow: 0 10px 6px -6px #777;
+            box-shadow: 0 10px 6px -6px #777;
+        
+        &:hover {
+          transform: scale(0.98);
+        }
       }
     }
   }
